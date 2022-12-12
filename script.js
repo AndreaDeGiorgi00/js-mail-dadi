@@ -17,19 +17,55 @@ const giocatore = Math.floor((Math.random() * 6 ) + 1);
 target.innerHTML +=`<p> dal lancio del giocatore è uscito :  ${giocatore} </p>` ;
 const computer = Math.floor((Math.random() * 6 ) + 1);
 target.innerHTML += `<p> dal lancio del computer è uscito :  ${computer} </p>` ;
-console.log(computer);
+
 
 //confronto i due lanci 
 
 if (giocatore > computer){
-    console.log("ha vinto giocatore 1");
+    
     target.innerHTML +=  ` <p> ha vinto il giocatore  </p>`
+   
 }else if (giocatore < computer) {
-    console.log("ha vinto il computer");
+    
     target.innerHTML +=  ` <p> ha vinto il computer  </p>`
     
 }else{
-    console.log("pareggio");
+    
     target.innerHTML +=  ` <p> c'è stato un pareggio </p>`
+   
 }
 
+
+
+/*ESERCIZIO 2 - Finta Login
+Inventa una lista di email autorizzate
+Chiedi all’utente la sua email, con un piccolo form.
+controlla che sia nella lista di chi può accedere,
+stampa un messaggio appropriato sull’esito del controllo.*/
+
+
+//fare la lista di email autorizzate
+
+const emailAuto = ["andrea@gmail.com" , "Mario@gmail.com" , "topolino@gmail.com"]
+
+//seleziono il blocco della email in imput e il bottone e il testo
+
+const btn = document.getElementById("bottone")
+const email = document.getElementById("email")
+const txt = document.getElementById("testo")
+// creao una variabile per controllare se la email è valida
+let variabile = false
+
+btn.addEventListener("click", function(){
+
+    for (let i = 0 ; i < emailAuto.length ; i++){
+       if (emailAuto[i] === email.value) {
+        //accesso concesso quindi cambio la variabile 
+        variabile = true;
+    };
+
+    }
+
+    let testo = variabile ? "accesso consentito" : "accesso negato";
+    txt.innerText = testo
+});
