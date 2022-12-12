@@ -35,7 +35,7 @@ if (giocatore > computer){
    
 }
 
-
+// !---------------------------------------------------------------
 
 /*ESERCIZIO 2 - Finta Login
 Inventa una lista di email autorizzate
@@ -46,26 +46,33 @@ stampa un messaggio appropriato sull’esito del controllo.*/
 
 //fare la lista di email autorizzate
 
-const emailAuto = ["andrea@gmail.com" , "Mario@gmail.com" , "topolino@gmail.com"]
+const emailAuto = ["andrea@gmail.com" , "Mario@gmail.com" , "topolino@gmail.com"];
 
 //seleziono il blocco della email in imput e il bottone e il testo
 
-const btn = document.getElementById("bottone")
-const email = document.getElementById("email")
-const txt = document.getElementById("testo")
+const btn = document.getElementById("bottone");
+const email = document.getElementById("email");
+const txt = document.getElementById("testo");
 // creao una variabile per controllare se la email è valida
 let variabile = false
 
-btn.addEventListener("click", function(){
+btn.addEventListener("click", function(event){
 
+    //con questo comando non viene eseguito il normale funzionamento dell'evento
+    event.preventDefault()
+    
     for (let i = 0 ; i < emailAuto.length ; i++){
+        
        if (emailAuto[i] === email.value) {
         //accesso concesso quindi cambio la variabile 
         variabile = true;
+        };
+
     };
 
-    }
-
     let testo = variabile ? "accesso consentito" : "accesso negato";
-    txt.innerText = testo
+    txt.innerText = testo;
+
+    //riporto la variabile allo stato iniziale 
+    variabile = false
 });
