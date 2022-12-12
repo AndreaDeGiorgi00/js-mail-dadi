@@ -56,10 +56,9 @@ const txt = document.getElementById("testo");
 // creao una variabile per controllare se la email è valida
 let variabile = false
 
-btn.addEventListener("click", function(event){
+btn.addEventListener("click", function(){
 
-    //con questo comando non viene eseguito il normale funzionamento dell'evento
-    event.preventDefault()
+    
     
     for (let i = 0 ; i < emailAuto.length ; i++){
         
