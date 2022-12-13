@@ -7,7 +7,7 @@ Stampiamo in pagina i due tiri e il risultato*/
 
 //SELEZIONO IL BLOCCO DOVE STAMPARE I RISULTATI
 
-let target = document.getElementById("gioco-dadi")
+const target = document.getElementById("gioco-dadi")
 
 
 //vengono lanciati i dadi e stampati in pagina
@@ -69,7 +69,7 @@ btn.addEventListener("click", function(){
 
     };
 
-    let testo = variabile ? "accesso consentito" : "accesso negato";
+    const testo = variabile ? "accesso consentito" : "accesso negato";
     txt.innerText = testo;
 
     //riporto la variabile allo stato iniziale 
